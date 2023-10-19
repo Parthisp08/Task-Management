@@ -71,9 +71,6 @@ export const List = () => {
   }
 };
 
-
-
-
 // const taskData = useSelector(getAllTasks);
 
 const statusOnChange = (e) => {
