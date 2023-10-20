@@ -24,10 +24,33 @@ export const List = () => {
   const [selectedStatus, setSelectedStatus] = useState('All');
 
 
+  // const getApiTasks = async () => {
+  //   try {
+  //     const data = await fetchTask();
+  //     dispatch(listTask(data));
+  //   } catch (error) {
+  //     console.error('Error fetching data:', error);
+  //   }
+  // };
+
+
+  // new function 
+
+
   const getApiTasks = async () => {
     try {
       const data = await fetchTask();
-      dispatch(listTask(data));
+	  //console.log("test")   //  dispatch(listTask(data));
+      dispatch({
+        type: 'task/listTask',
+        payload:{
+        data: data,
+           status: data.status, // HTTP status code
+           message: data.statusText,
+       
+       }
+      })
+	  
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -92,6 +115,7 @@ const statusOnChange = (e) => {
     } catch (err) {
       console.error('Error fetching data:', err);
     }
+    getApiTasks();
   };
 
   const handleUpdateTask = (data) => {

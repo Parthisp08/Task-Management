@@ -20,7 +20,7 @@ const UpdateTask = () => {
   const [tname, setTName] = useState(selectedTask ? selectedTask.tname : '');
   const [tdescription, setTDescription] =  useState(selectedTask ? selectedTask.tdescription : '');
   const [options, setOptions] = useState([
-    { value: 'All', label: 'All' },
+    // { value: 'All', label: 'All' },
     { value: 'Pending', label: 'Pending' },
     { value: 'Completed', label: 'Completed' },
   ]);
