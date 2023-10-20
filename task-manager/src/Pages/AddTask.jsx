@@ -60,7 +60,7 @@ const AddTask = () => {
         <textarea id='taskDesc' value={tdescription}  onChange={(event) => setTDescription(event.target.value)}  name='taskDesc' className='taskDescription' placeholder='Enter your Task Description' maxLength="100"/>
         </div>
         
-        <button type="submit" className='btnSaveTasks' onClick={() =>{handleAddTask(), gotoList()}}>Save</button>
+        <button type="submit" className='btnSaveTasks' onClick={() =>{handleAddTask(); gotoList()}}>Save</button>
 
         </div>
 
